@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="MyAppTest">
+<head>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.1/angular.js"></script>
+  <script src="//code.angularjs.org/1.3.0-beta.9/angular-mocks.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+  <meta charset="utf-8">
+  <title>MockMe</title>
+</head>
+<body>
+
+  <div ng-controller="MyController as myCtrl">
+    <ul ng-repeat="something in myCtrl.somethings">
+      <li>{{something.name}} <a href="#" ng-click="myCtrl.deleteSomething(something)">X</a></li>
+    </ul>
+
+    <form>
+      <input type="text" ng-model="myCtrl.name" />
+      <button ng-click="myCtrl.addSomething()">Add Something</button>
+    </form>
+  </div>
+ 
+  <script src="test.json"></script>
+
+  <script src="mockme.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
