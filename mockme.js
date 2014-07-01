@@ -34,7 +34,7 @@
         localStorage[mappingUrl] = JSON.stringify(json);
       }
 
-      var idRe = new RegExp(mappingUrl + '/' + '([\\w-]+)');
+      var idRe = new RegExp(mappingUrl + '/?' + '([\\w-]+)/?');
 
       // get all
       $httpBackend.whenGET(mappingUrl).respond(function(method, url, data, headers) {
