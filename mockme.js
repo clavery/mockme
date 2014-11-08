@@ -113,8 +113,16 @@
 
 
     });
-
-    angular.forEach(MockMe.passthrough, function(pass) {
+    
+    /**
+     * Was
+     * angular.forEach(MockMe.passthrough, function(pass) {
+     * If code is in this way we ger following error:
+     * Error: Unexpected request: GET url .. 
+     * No more request expected
+     * at $httpBackend (http://server url .. /js/angular-mocks.js:1180:9)
+     **/
+    angular.forEach(MockMe[1], function(pass) {
       $httpBackend.whenGET(pass).passThrough();
     });
   }]);
